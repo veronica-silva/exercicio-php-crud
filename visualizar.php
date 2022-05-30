@@ -1,3 +1,8 @@
+<?php
+require_once "src/funcoes.php";
+$listaDeAlunos = lerAlunos($conexao);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,8 +17,28 @@
     <hr>
     <p><a href="inserir.php">Inserir novo aluno</a></p>
 
+
+    <table>
+        <thead> 
+            
+                <th>id</th>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Média</th>
+                <th>situacao</th>
+        
+        </thead>
+
+        <tbody>
+            <td></td>
+        </tbody>
+    </table>
+
    <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
 para exibir a relação de alunos existentes no banco de dados.
+
+
 
 Obs.: não se esqueça de criar também os links dinâmicos para
 as páginas de atualização e exclusão. -->
