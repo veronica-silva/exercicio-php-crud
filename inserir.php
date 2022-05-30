@@ -29,13 +29,13 @@
 
 	<form action="#" method="post">
 	    <p><label for="nome">Nome:</label>
-	    <input type="text" id="nome" required></p>
+	    <input type="text" name="nome" id="nome" required></p>
         
       <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" id="primeira" step="0.1" min="0.0" max="10" required></p>
+	    <input type="number" name="primeira" id="primeira" step="0.1" min="0.0" max="10" required></p>
 	    
 	    <p><label for="segunda">Segunda nota:</label>
-	    <input type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
+	    <input type="number" name="segunda" id="segunda" step="0.1" min="0.0" max="10" required></p>
 	    
       <button type="submit" name="inserir">Cadastrar aluno</button>
 	</form>
