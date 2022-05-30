@@ -14,3 +14,18 @@ function lerAlunos(PDO $conexao):array{
     }
     return $resultado;
 }
+
+
+function inserirAluno(PDO $conexao, string $nome, float $primeira, float $segunda){
+    $sql = "INSERT INTO alunos (nome, primeira, segunda) VALUES (:nome, :primeira, :segunda)";
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindParam(':nome', $nome, PDO::PARAM_STR);
+        $consulta->bindParam(':primeira', $primeira, PDO::PARAM_STR);
+        $consulta->bindParam(':segunda', $segunda, PDO::PARAM_STR);
+        $consulta->execute();
+    } catch (Exception $erro) {
+       die("Erro: ".$erro->getMessage());
+    }
+
+}

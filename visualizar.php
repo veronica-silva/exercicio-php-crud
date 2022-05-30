@@ -19,15 +19,14 @@ $listaDeAlunos = lerAlunos($conexao);
 
 
     <table>
+        <caption>Lista de Alunos</caption>
         <thead> 
-            
                 <th>id</th>
                 <th>Nome</th>
                 <th>Nota 1</th>
                 <th>Nota 2</th>
                 <th>Média</th>
                 <th>situacao</th>
-        
         </thead>
 
         <tbody>

@@ -1,3 +1,14 @@
+<?php
+    if(isset($_POST['inserir'])){
+        //echo "ok!";
+        require_once "../src/funcoes-alunos.php";
+        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+		$primeira = filter_input(INPUT_POST, 'primeira', FILTER_SANITIZE_NUMBER_FLOAT);
+		$segunda = filter_input(INPUT_POST, 'segunda', FILTER_SANITIZE_NUMBER_FLOAT);
+        inserirAluno($conexao, $nome, $primeira, $segunda);
+        header("location:listar.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,7 +34,7 @@
 	    <p><label for="segunda">Segunda nota:</label>
 	    <input type="number" id="segunda" step="0.1" min="0.0" max="10" required></p>
 	    
-      <button>Cadastrar aluno</button>
+      <button type="submit" name="inserir">Cadastrar aluno</button>
 	</form>
 
     <hr>
