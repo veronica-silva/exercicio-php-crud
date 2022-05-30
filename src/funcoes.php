@@ -16,16 +16,36 @@ function lerAlunos(PDO $conexao):array{
 }
 
 
-function inserirAluno(PDO $conexao, string $nome, float $primeira, float $segunda){
-    $sql = "INSERT INTO alunos (nome, primeira, segunda) VALUES (:nome, :primeira, :segunda)";
+function inserirAluno(PDO $conexao, string $nome, float $primeira, float $segunda, float $media, float $situacao):void{
+    $sql = "INSERT INTO alunos (nome, primeira, segunda, media, situacao) VALUES (:nome, :primeira, :segunda, :media, :situacao)";
     try {
         $consulta = $conexao->prepare($sql);
         $consulta->bindParam(':nome', $nome, PDO::PARAM_STR);
         $consulta->bindParam(':primeira', $primeira, PDO::PARAM_STR);
         $consulta->bindParam(':segunda', $segunda, PDO::PARAM_STR);
+        $consulta->bindParam(':media', $media, PDO::PARAM_STR);
+        $consulta->bindParam(':situacao', $situacao, PDO::PARAM_STR);
         $consulta->execute();
     } catch (Exception $erro) {
        die("Erro: ".$erro->getMessage());
     }
 
+}
+
+
+
+
+
+
+
+
+function excluirAluno(PDO $conexao, int $id):void{
+    $sql = "DELETE FROM alunos WHERE id = :id";
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindParam(':id', $id, PDO::PARAM_INT);
+        $consulta->execute();
+    } catch (Exception $erro) {
+        die("Erro: ".$erro->getMessage());
+    }
 }

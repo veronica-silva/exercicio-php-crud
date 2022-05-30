@@ -1,12 +1,15 @@
 <?php
+
     if(isset($_POST['inserir'])){
         //echo "ok!";
-        require_once "../src/funcoes-alunos.php";
+        require_once "../exercicio-php-crud/src/funcoes.php";
         $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
 		$primeira = filter_input(INPUT_POST, 'primeira', FILTER_SANITIZE_NUMBER_FLOAT);
 		$segunda = filter_input(INPUT_POST, 'segunda', FILTER_SANITIZE_NUMBER_FLOAT);
-        inserirAluno($conexao, $nome, $primeira, $segunda);
-        header("location:listar.php");
+		$media = filter_input(INPUT_POST, 'media', FILTER_SANITIZE_NUMBER_FLOAT);
+		$situacao = filter_input(INPUT_POST, 'situacao', FILTER_SANITIZE_SPECIAL_CHARS);
+        inserirAluno($conexao, $nome, $primeira, $segunda, $media, $situacao);
+        header("location:visualizar.php");
     }
 ?>
 <!DOCTYPE html>
