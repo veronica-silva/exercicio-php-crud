@@ -1,5 +1,5 @@
 <?php
-require_once "src/funcoes.php";
+require_once "../exercicio-php-crud/src/funcoes.php";
 $listaDeAlunos = lerAlunos($conexao);
 ?>
 

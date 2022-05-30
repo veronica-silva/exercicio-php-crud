@@ -1,5 +1,5 @@
 <?php
-require_once "../src/conecta.php";
+require_once "../exercicio-php-crud/src/conecta.php";
 
 function lerAlunos(PDO $conexao):array{
     $sql = "SELECT id, nome, primeira, segunda, media, situacao FROM alunos";
