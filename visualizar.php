@@ -31,7 +31,20 @@ $listaDeAlunos = lerAlunos($conexao);
         </thead>
 
         <tbody>
-            <td></td>
+        <?php
+        foreach ($listaDeAlunos as $aluno) {
+        ?>
+            <tr>
+                <td class="alunos id"><?= $aluno ['id'] ?></td>
+                <td class="alunos nome"><?= $aluno ['nome'] ?></td>
+                <td class="alunos primeira"><?= $aluno ['primeira'] ?></td>
+                <td class="alunos segunda"><?= $aluno ['segunda'] ?></td>
+                <td class="alunos media"><?= $aluno ['media'] ?></td>
+                <td class="alunos situacao"><?= $aluno ['situacao'] ?></td>
+            </tr>
+        <?php
+        }
+        ?>
         </tbody>
     </table>
 
