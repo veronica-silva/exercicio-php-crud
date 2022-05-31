@@ -13,6 +13,19 @@ function lerAlunos(PDO $conexao):array{
     }
     return $resultado;
 }
+function lerUmAluno(PDO $conexao, int $id):array{
+    $sql = "SELECT id, nome, primeira, segunda, media, situacao FROM alunos WHERE id = :id";
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindParam(':id', $id, PDO::PARAM_INT);
+        $consulta->execute();
+        //$resultado = $consulta->fetch(PDO::FETCH_ASSOC); 
+        $resultado = $consulta->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $erro) {
+        die("Erro: ".$erro->getMessage());
+    } 
+    return $resultado;
+}
 function inserirAluno(PDO $conexao, string $nome, float $primeira, float $segunda, float $media, string $situacao):void{
     $sql = "INSERT INTO alunos (nome, primeira, segunda, media, situacao) VALUES (:nome, :primeira, :segunda, :media, :situacao)";
     try {
