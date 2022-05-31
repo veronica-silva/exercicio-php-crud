@@ -40,7 +40,7 @@ $listaDeAlunos = lerAlunos($conexao);
                 <td class="alunos segunda"><?= $aluno ['segunda'] ?></td>
                 <td class="alunos media"><?= $aluno ['media'] ?></td>
                 <td class="alunos situacao"><?= $aluno ['situacao'] ?></td>
-                <td class="alunos excluir"><a href="excluir.php">Excluir aluno</a></td>
+                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>">Excluir aluno</a></td>
                 
             </tr>
         <?php
