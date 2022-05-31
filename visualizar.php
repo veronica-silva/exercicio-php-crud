@@ -19,15 +19,16 @@ $listaDeAlunos = lerAlunos($conexao);
     <p><a href="inserir.php">Inserir novo aluno</a></p>
 
 
-    <table>
+    <div class="table-responsive">
+    <table class="table table-hover">
         <caption>Lista de Alunos</caption>
         <thead> 
-                <th>id</th>
-                <th>Nome</th>
-                <th>Nota 1</th>
-                <th>Nota 2</th>
-                <th>Média</th>
-                <th>situacao</th>
+                <th scope="col">id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Nota 1</th>
+                <th scope="col">Nota 2</th>
+                <th scope="col">Média</th>
+                <th scope="col">situacao</th>
         </thead>
 
         <tbody>
@@ -35,14 +36,14 @@ $listaDeAlunos = lerAlunos($conexao);
         foreach ($listaDeAlunos as $aluno) {
         ?>
             <tr>
-                <td class="alunos id"><?= $aluno ['id'] ?></td>
+                <th scope="row" class="alunos id"><?= $aluno ['id'] ?></th>
                 <td class="alunos nome"><?= $aluno ['nome'] ?></td>
                 <td class="alunos primeira"><?= $aluno ['primeira'] ?></td>
                 <td class="alunos segunda"><?= $aluno ['segunda'] ?></td>
                 <td class="alunos media"><?= $aluno ['media'] ?></td>
                 <td class="alunos situacao" id="situacaoAluno"><?= $aluno ['situacao'] ?></td>
-                <td class="alunos atualizar"><a href="atualizar.php?id=<?=$aluno['id']?>">Atualizar</a></td>
-                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>" class="exclusao" >Excluir</a></td>
+                <td class="alunos atualizar"><a href="atualizar.php?id=<?=$aluno['id']?>" class="btn btn-primary">Atualizar</a></td>
+                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>" class="exclusao btn btn-danger" ><i class="bi bi-x-square-fill"></i>Excluir</a></td>
                 
             </tr>
         <?php
@@ -50,6 +51,7 @@ $listaDeAlunos = lerAlunos($conexao);
         ?>
         </tbody>
     </table>
+    </div>
 
    <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
 para exibir a relação de alunos existentes no banco de dados.
