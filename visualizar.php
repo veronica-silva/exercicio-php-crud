@@ -2,7 +2,6 @@
 require_once "../exercicio-php-crud/src/funcoes.php";
 $listaDeAlunos = lerAlunos($conexao);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,14 +10,13 @@ $listaDeAlunos = lerAlunos($conexao);
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
 <link href="css/style.css" rel="stylesheet">
 <link rel="stylesheet" href="../exercicio-php-crud/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 <body>
 <div class="container">
     <h1>Lista de alunos</h1>
     <hr>
-    <p><a href="inserir.php">Inserir novo aluno</a></p>
-
-
+    <p><a href="inserir.php" class="btn btn-success"><i class="bi bi-plus-lg"></i> Inserir novo aluno</a></p>
     <div class="table-responsive">
     <table class="table table-hover">
         <caption>Lista de Alunos</caption>
@@ -30,7 +28,6 @@ $listaDeAlunos = lerAlunos($conexao);
                 <th scope="col">Média</th>
                 <th scope="col">situacao</th>
         </thead>
-
         <tbody>
         <?php
         foreach ($listaDeAlunos as $aluno) {
@@ -42,8 +39,8 @@ $listaDeAlunos = lerAlunos($conexao);
                 <td class="alunos segunda"><?= $aluno ['segunda'] ?></td>
                 <td class="alunos media"><?= $aluno ['media'] ?></td>
                 <td class="alunos situacao" id="situacaoAluno"><?= $aluno ['situacao'] ?></td>
-                <td class="alunos atualizar"><a href="atualizar.php?id=<?=$aluno['id']?>" class="btn btn-primary">Atualizar</a></td>
-                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>" class="exclusao btn btn-danger" ><i class="bi bi-x-square-fill"></i>Excluir</a></td>
+                <td class="alunos atualizar"><a href="atualizar.php?id=<?=$aluno['id']?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i>  Atualizar</a></td>
+                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>" class="exclusao btn btn-danger" ><i class="bi bi-trash"></i> Excluir </a></td>
                 
             </tr>
         <?php
@@ -52,17 +49,12 @@ $listaDeAlunos = lerAlunos($conexao);
         </tbody>
     </table>
     </div>
-
    <!-- Aqui você deverá criar o HTML que quiser e o PHP necessários
 para exibir a relação de alunos existentes no banco de dados.
 
-
-
 Obs.: não se esqueça de criar também os links dinâmicos para
 as páginas de atualização e exclusão. -->
-
-
-    <p><a href="index.php">Voltar ao início</a></p>
+    <p><a href="index.php" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Voltar ao início</a></p>
 </div>
 <script src="script.js"></script>
 </body>

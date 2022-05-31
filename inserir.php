@@ -1,5 +1,4 @@
 <?php
-
     if(isset($_POST['inserir'])){
         //echo "ok!";
         require_once "../exercicio-php-crud/src/funcoes.php";
