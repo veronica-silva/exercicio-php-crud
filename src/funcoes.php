@@ -27,6 +27,21 @@ function inserirAluno(PDO $conexao, string $nome, float $primeira, float $segund
        die("Erro: ".$erro->getMessage());
     }
 }
+function atualizarAluno(PDO $conexao, string $nome, float $primeira, float $segunda, float $media, string $situacao):void{
+    $sql = "UPDATE alunos SET nome = :nome, primeira = :primeira, segunda = :segunda, media = :media, situacao = :situacao WHERE id = :id";
+    try {
+        $consulta = $conexao->prepare($sql);
+        $consulta->bindParam(':id', $id, PDO::PARAM_INT);
+        $consulta->bindParam(':nome', $nome, PDO::PARAM_STR);
+        $consulta->bindParam(':primeira', $primeira, PDO::PARAM_STR);
+        $consulta->bindParam(':segunda', $segunda, PDO::PARAM_STR);
+        $consulta->bindParam(':media', $media, PDO::PARAM_STR);
+        $consulta->bindParam(':situacao', $situacao, PDO::PARAM_STR);
+        $consulta->execute();
+    } catch (Exception $erro) {
+       die("Erro: ".$erro->getMessage());
+    }
+}
 function excluirAluno(PDO $conexao, int $id):void{
     $sql = "DELETE FROM alunos WHERE id = :id";
     try {

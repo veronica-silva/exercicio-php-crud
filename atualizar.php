@@ -1,3 +1,21 @@
+<?php
+    if(isset($_POST['atualizar-dados'])){
+        //echo "ok!";
+        require_once "../exercicio-php-crud/src/funcoes.php";
+        $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+		$primeira = filter_input(INPUT_POST, 'primeira', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$segunda = filter_input(INPUT_POST, 'segunda', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+		$media = ($primeira + $segunda)/2;
+		if ($media >= 7) {
+			$situacao = 'Aprovado';
+		} else {
+			$situacao = 'Reprovado';
+		}
+        atualizarAluno($conexao, $nome, $primeira, $segunda, $media, $situacao);
+        header("location:visualizar.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -38,7 +56,7 @@
 	        <input type="text" name="situacao" id="situacao" readonly disabled>
         </p>
 	    
-        <button name="atualizar-dados">Atualizar dados do aluno</button>
+        <button type="submit" name="atualizar-dados">Atualizar dados do aluno</button>
 	</form>    
     
     <hr>
