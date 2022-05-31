@@ -1,6 +1,5 @@
 <?php
 require_once "../exercicio-php-crud/src/conecta.php";
-
 function lerAlunos(PDO $conexao):array{
     $sql = "SELECT id, nome, primeira, segunda, media, situacao FROM alunos";
 
@@ -14,8 +13,6 @@ function lerAlunos(PDO $conexao):array{
     }
     return $resultado;
 }
-
-
 function inserirAluno(PDO $conexao, string $nome, float $primeira, float $segunda, float $media, string $situacao):void{
     $sql = "INSERT INTO alunos (nome, primeira, segunda, media, situacao) VALUES (:nome, :primeira, :segunda, :media, :situacao)";
     try {
@@ -29,16 +26,7 @@ function inserirAluno(PDO $conexao, string $nome, float $primeira, float $segund
     } catch (Exception $erro) {
        die("Erro: ".$erro->getMessage());
     }
-
 }
-
-
-
-
-
-
-
-
 function excluirAluno(PDO $conexao, int $id):void{
     $sql = "DELETE FROM alunos WHERE id = :id";
     try {
