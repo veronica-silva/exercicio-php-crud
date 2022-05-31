@@ -10,6 +10,7 @@ $listaDeAlunos = lerAlunos($conexao);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
 <link href="css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="../exercicio-php-crud/bootstrap/css/bootstrap.css">
 </head>
 <body>
 <div class="container">
