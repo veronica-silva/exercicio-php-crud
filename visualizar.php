@@ -41,7 +41,7 @@ $listaDeAlunos = lerAlunos($conexao);
                 <td class="alunos media"><?= $aluno ['media'] ?></td>
                 <td class="alunos situacao"><?= $aluno ['situacao'] ?></td>
                 <td class="alunos atualizar"><a href="atualizar.php?id=<?=$aluno['id']?>">Atualizar</a></td>
-                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>">Excluir</a></td>
+                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>" class="exclusao" >Excluir</a></td>
                 
             </tr>
         <?php
@@ -61,6 +61,6 @@ as páginas de atualização e exclusão. -->
 
     <p><a href="index.php">Voltar ao início</a></p>
 </div>
-
+<script src="script.js"></script>
 </body>
 </html>

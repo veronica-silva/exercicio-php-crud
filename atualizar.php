@@ -17,8 +17,8 @@ $listaDeAlunos = lerAlunos($conexao);
 		} else {
 			$situacao = 'Reprovado';
 		}
-        atualizarAluno($conexao, $nome, $primeira, $segunda, $media, $situacao);
-        header("location:visualizar.php");
+        atualizarAluno($conexao, $id, $nome, $primeira, $segunda, $media, $situacao);
+        header("location:visualizar.php?status=sucesso");
     }
 ?>
 
@@ -37,10 +37,10 @@ $listaDeAlunos = lerAlunos($conexao);
     		
     <p>Utilize o formulário abaixo para atualizar os dados do aluno.</p>
 
-    <form action="#" method="post">
+    <form action="" method="post">
         
 	    <p>
-            <input type="hidden" name="<?=$aluno['nome']?>">
+            
             <label for="nome">Nome:</label>
 	        <input type="text" name="nome" id="nome" value="<?= $aluno['nome']?>" required>
         </p>

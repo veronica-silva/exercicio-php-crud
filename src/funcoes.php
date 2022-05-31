@@ -40,7 +40,7 @@ function inserirAluno(PDO $conexao, string $nome, float $primeira, float $segund
        die("Erro: ".$erro->getMessage());
     }
 }
-function atualizarAluno(PDO $conexao, string $nome, float $primeira, float $segunda, float $media, string $situacao):void{
+function atualizarAluno(PDO $conexao, int $id, string $nome, float $primeira, float $segunda, float $media, string $situacao):void{
     $sql = "UPDATE alunos SET nome = :nome, primeira = :primeira, segunda = :segunda, media = :media, situacao = :situacao WHERE id = :id";
     try {
         $consulta = $conexao->prepare($sql);
