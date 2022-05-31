@@ -39,14 +39,21 @@ $listaDeAlunos = lerAlunos($conexao);
 
     <form action="#" method="post">
         
-	    <p><label for="nome">Nome:</label>
-	    <input type="text" name="nome" id="nome" value="<?= $aluno['nome']?>" required></p>
+	    <p>
+            <input type="hidden" name="<?=$aluno['nome']?>">
+            <label for="nome">Nome:</label>
+	        <input type="text" name="nome" id="nome" value="<?= $aluno['nome']?>" required>
+        </p>
         
-        <p><label for="primeira">Primeira nota:</label>
-	    <input name="primeira" type="number" id="primeira" value="<?= $aluno['primeira']?>" step="0.1" min="0.0" max="10" required></p>
+        <p>
+            <label for="primeira">Primeira nota:</label>
+	        <input name="primeira" type="number" id="primeira" value="<?= $aluno['primeira']?>" step="0.1" min="0.0" max="10" required>
+        </p>
 	    
-	    <p><label for="segunda">Segunda nota:</label>
-	    <input name="segunda" type="number" id="segunda" value="<?= $aluno['segunda']?>" step="0.1" min="0.0" max="10" required></p>
+	    <p>
+            <label for="segunda">Segunda nota:</label>
+	        <input name="segunda" type="number" id="segunda" value="<?= $aluno['segunda']?>" step="0.1" min="0.0" max="10" required>
+        </p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
