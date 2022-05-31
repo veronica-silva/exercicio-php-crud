@@ -10,3 +10,12 @@ for(let i = 0; i < links.length; i++){
     });
 }
 
+const situacao = document.getElementById('situacaoAluno');
+for(let i = 0; i < situacao.length; i++){
+        if (situacao = 'Aprovado') {
+            document.getElementById("situacaoAluno").classList.add('table-success');
+        } else{
+            document.getElementById("situacaoAluno").classList.add('table-danger');
+        }
+
+}
