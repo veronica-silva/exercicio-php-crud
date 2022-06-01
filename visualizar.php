@@ -17,7 +17,7 @@ $listaDeAlunos = lerAlunos($conexao);
     <h1>Lista de alunos</h1>
     <hr>
     <p><a href="inserir.php" class="btn btn-success"><i class="bi bi-plus-lg"></i> Inserir novo aluno</a></p>
-    <div class="table-responsive">
+    <div class="table-responsive container center shadow mt-1 mb-2">
     <table class="table table-hover">
         <caption>Lista de Alunos</caption>
         <thead> 
