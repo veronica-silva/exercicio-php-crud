@@ -47,26 +47,26 @@ $listaDeAlunos = lerAlunos($conexao);
         
         <p>
             <label for="primeira">Primeira nota:</label>
-	        <input name="primeira" type="number" id="primeira" value="<?= $aluno['primeira']?>" step="0.1" min="0.0" max="10" required>
+	        <input name="primeira" type="number" id="primeira" oninput="getAverage()" value="<?= $aluno['primeira']?>" step="0.1" min="0.0" max="10" required>
         </p>
 	    
 	    <p>
             <label for="segunda">Segunda nota:</label>
-	        <input name="segunda" type="number" id="segunda" value="<?= $aluno['segunda']?>" step="0.1" min="0.0" max="10" required>
+	        <input name="segunda" type="number" id="segunda" oninput="getAverage()" value="<?= $aluno['segunda']?>" step="0.1" min="0.0" max="10" required>
         </p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição.
         Usado apenas para exibição do valor da média -->
             <label for="media">Média:</label>
-            <input name="media" type="number" id="media"  step="0.1" min="0.0" max="10" readonly disabled>
+            <input name="media" type="number" id="media" value="<?= $aluno['media']?>"  step="0.1" min="0.0" max="10" readonly disabled>
         </p>
 
         <p>
         <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
             <label for="situacao">Situação:</label>
-	        <input type="text" name="situacao" id="situacao"  readonly disabled>
+	        <input type="text" name="situacao" id="situacao" value="<?= $aluno['situacao']?>" readonly disabled>
         </p>
 	    
         <button type="submit" name="atualizar">Atualizar dados do aluno</button>
@@ -77,6 +77,6 @@ $listaDeAlunos = lerAlunos($conexao);
 
 </div>
 
-
+<script src="script.js"></script>
 </body>
 </html>

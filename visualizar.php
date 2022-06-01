@@ -32,15 +32,15 @@ $listaDeAlunos = lerAlunos($conexao);
         <?php
         foreach ($listaDeAlunos as $aluno) {
         ?>
-            <tr>
+            <tr class="aluno-row">
                 <th scope="row" class="alunos id"><?= $aluno ['id'] ?></th>
                 <td class="alunos nome"><?= $aluno ['nome'] ?></td>
                 <td class="alunos primeira"><?= $aluno ['primeira'] ?></td>
                 <td class="alunos segunda"><?= $aluno ['segunda'] ?></td>
                 <td class="alunos media"><?= $aluno ['media'] ?></td>
-                <td class="alunos situacao" id="situacaoAluno"><?= $aluno ['situacao'] ?></td>
-                <td class="alunos atualizar"><a href="atualizar.php?id=<?=$aluno['id']?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i>  Atualizar</a></td>
-                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>" class="exclusao btn btn-danger" ><i class="bi bi-trash"></i> Excluir </a></td>
+                <td class="alunos situacao"><?= $aluno ['situacao'] ?></td>
+                <td class="alunos atualizar"><a href="atualizar.php?id=<?=$aluno['id']?>" class="btn btn-primary"><i class="bi bi-pencil-square"></i>Edit</a></td>
+                <td class="alunos excluir"><a href="excluir.php?id=<?=$aluno['id']?>" class="exclusao btn btn-danger" ><i class="bi bi-trash"></i>Delete</a></td>
                 
             </tr>
         <?php

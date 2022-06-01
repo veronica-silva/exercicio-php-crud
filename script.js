@@ -3,19 +3,38 @@ const links = document.querySelectorAll('.exclusao');
 for(let i = 0; i < links.length; i++){
     links[i].addEventListener("click", function(event){
         event.preventDefault();
-        let resposta = confirm('Deseja mesmo excluir?');
+        let resposta = confirm('Deseja mesmo excluir o aluno?');
         if (resposta) {
             location.href = links[i].getAttribute('href');
         }
     });
 }
 
-const situacao = document.getElementById('situacaoAluno');
-for(let i = 0; i < situacao.length; i++){
-        if (situacao = 'Aprovado') {
-            document.getElementById("situacaoAluno").classList.add('table-success');
-        } else{
-            document.getElementById("situacaoAluno").classList.add('table-danger');
-        }
+function getAverage(){
+    let nota1 = document.getElementById('primeira').value;
+    let nota2 = document.getElementById('segunda').value;
+    nota1 = parseFloat(nota1);
+    nota2 = parseFloat(nota2);
+    let result = ((nota1 + nota2)/2).toFixed(1);
+    document.getElementById('media').value = result;
+    mediaNotas = verSituacao(result);
+    document.getElementById('situacao').value = situacaoResultado;
+}
 
+function verSituacao(result){
+    if(result >= 7){
+        situacaoResultado = "Aprovado";
+     }else{
+        situacaoResultado = "Reprovado";
+     }
+     return situacaoResultado;
+}
+
+function colors(situacaoResultado){
+    let alunoRow = document.querySelectorAll('.aluno-row');
+    if (situacaoResultado === "Aprovado") {
+        alunoRow.classList.add(" table-success");
+    } else{
+        alunoRow.classList.add(" table-danger");   
+    }
 }
