@@ -32,7 +32,7 @@ $listaDeAlunos = lerAlunos($conexao);
         <?php
         foreach ($listaDeAlunos as $aluno) {
         ?>
-            <tr class="aluno-row">
+            <tr class="<?= ($aluno ['media'] >= 7 ) ? 'table-success' : 'table-danger'; ?>">
                 <th scope="row" class="alunos id"><?= $aluno ['id'] ?></th>
                 <td class="alunos nome"><?= $aluno ['nome'] ?></td>
                 <td class="alunos primeira"><?= $aluno ['primeira'] ?></td>

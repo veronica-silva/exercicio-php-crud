@@ -29,12 +29,3 @@ function verSituacao(result){
      }
      return situacaoResultado;
 }
-
-function colors(situacaoResultado){
-    let alunoRow = document.querySelectorAll('.aluno-row');
-    if (situacaoResultado === "Aprovado") {
-        alunoRow.classList.add(" table-success");
-    } else{
-        alunoRow.classList.add(" table-danger");   
-    }
-}
