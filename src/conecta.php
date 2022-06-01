@@ -1,7 +1,7 @@
 <?php
 /*Script de conehão ao servidor banco de dados */
 $servidor = "localhost";
-$usuario = "veroot";
+$usuario = "id19029958_veroot";
 $senha = "MuitoCurta@12345";
 $banco = "id19029958_crud_escola_veronica";
 
