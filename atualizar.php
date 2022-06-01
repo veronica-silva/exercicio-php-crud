@@ -31,40 +31,62 @@ $listaDeAlunos = lerAlunos($conexao);
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 <body>
-<div class="container mt-2">
-    <h1 class="text-center mt-2">Atualizar dados do aluno </h1>
-    <hr>
-    <p><a href="visualizar.php" class="btn btn-secondary"><i class="bi bi-arrow-left"></i>Voltar à lista de alunos</a></p>		
+<div class="container">
+    <h1 class="text-center mt-4">Atualizar dados do aluno </h1>
+    <hr>		
     <p class="text-center">Utilize o formulário abaixo para atualizar os dados do aluno.</p>  
     <form action="" method="post">
         <p>
             <label for="nome" class="form-label">Nome:</label>
-	        <input type="text" name="nome" id="nome" value="<?= $aluno['nome']?>" required>
+	        <input type="text" class="form-control mb-4" name="nome" id="nome" value="<?= $aluno['nome']?>" required>
         </p>
-        <p>
+        <div class="row">
+            <div class="col">
+            <p>
             <label for="primeira" class="form-label">Primeira nota:</label>
-	        <input name="primeira" type="number" id="primeira" oninput="getAverage()" value="<?= $aluno['primeira']?>" step="0.1" min="0.0" max="10" required>
+	        <input name="primeira" class="form-control" type="number" id="primeira" oninput="getAverage()" value="<?= $aluno['primeira']?>" step="0.1" min="0.0" max="10" required>
         </p>
-	    <p>
+            </div>
+            <div class="col">
+            <p>
             <label for="segunda" class="form-label">Segunda nota:</label>
-	        <input name="segunda" type="number" id="segunda" oninput="getAverage()" value="<?= $aluno['segunda']?>" step="0.1" min="0.0" max="10" required>
+	        <input name="segunda" class="form-control" type="number" id="segunda" oninput="getAverage()" value="<?= $aluno['segunda']?>" step="0.1" min="0.0" max="10" required>
         </p>
-        <p>
+            </div>
+            <div class="col">
+            <p>
         <!-- Campo somente leitura e desabilitado para edição.
         Usado apenas para exibição do valor da média -->
             <label for="media" class="form-label">Média:</label>
-            <input name="media" type="number" id="media" value="<?= $aluno['media']?>"  step="0.1" min="0.0" max="10" readonly disabled>
+            <input name="media" class="form-control" type="number" id="media" value="<?= $aluno['media']?>"  step="0.1" min="0.0" max="10" readonly disabled>
         </p>
-        <p>
+            </div>
+            <div class="col">
+            <p>
         <!-- Campo somente leitura e desabilitado para edição 
         Usado apenas para exibição do texto da situação -->
             <label for="situacao" class="form-label">Situação:</label>
-	        <input type="text" name="situacao" id="situacao" value="<?= $aluno['situacao']?>" readonly disabled>
+	        <input type="text" class="form-control" name="situacao" id="situacao" value="<?= $aluno['situacao']?>" readonly disabled>
         </p>
-        <button type="submit" class="btn btn-success" name="atualizar">Atualizar dados do aluno</button>
+            </div>
+        </div>
+
+
+        <div class="row">
+        <p class="col text-center mt-4"><a href="visualizar.php" class="btn btn-secondary btn-lg"><i class="bi bi-arrow-left"></i>Voltar à lista de alunos</a></p>
+        <p class="col text-center">
+        <button type="submit" class="btn btn-success btn-lg mt-4" name="atualizar"><i class="bi bi-check-square"></i> Atualizar dados do aluno</button>
+        </p>
+        </div>
+
 	</form> 
     <hr> 
 </div>
 <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+

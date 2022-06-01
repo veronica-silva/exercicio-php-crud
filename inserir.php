@@ -28,27 +28,36 @@
 </head>
 <body>
 <div class="container">
-	<h1>Cadastrar um novo aluno </h1>
+	<h1 class="text-center mt-4">Cadastrar um novo aluno </h1>
     <hr>
-    		
-    <p>Utilize o formulário abaixo para cadastrar um novo aluno.</p>
-
+    <br>
+    <p class="text-center">Utilize o formulário abaixo para cadastrar um novo aluno.</p>
+	<br>
 	<form action="#" method="post">
-	    <p><label for="nome">Nome:</label>
-	    <input type="text" name="nome" id="nome" required></p>
-        
-      <p><label for="primeira">Primeira nota:</label>
-	    <input type="number" name="primeira"  step="0.1" min="0.0" max="10" required></p>
-	    
-	    <p><label for="segunda">Segunda nota:</label>
-	    <input type="number" name="segunda"  step="0.1" min="0.0" max="10" required></p>
-	    
-      <button type="submit" name="inserir">Cadastrar aluno</button>
-	</form>
-
-    <hr>
-    <p><a href="index.php">Voltar ao início</a></p>
+	
+			<p><label for="nome" class="form-label">Nome:</label>
+	    <input type="text" class="form-control" name="nome" id="nome" required></p>
+		<div class="row">
+			<div class="col">
+			<p><label for="primeira" class="form-label">Primeira nota:</label>
+	    <input type="number" class="form-control" name="primeira"  step="0.1" min="0.0" max="10" required></p>
+			</div>
+			<div class="col">
+			<p><label for="segunda" class="form-label">Segunda nota:</label>
+	    <input type="number" class="form-control" name="segunda"  step="0.1" min="0.0" max="10" required></p>
+			</div>
+		</div>
+		<div class="row mt-4">
+        <p class="col text-center"><a href="index.php" class="btn btn-secondary btn-lg"><i class="bi bi-arrow-left"></i> Voltar ao início</a></p>
+		<p class="col text-center">
+		<button type="submit"   name="inserir" class="btn btn-success btn-lg"><i class="bi bi-check-square"></i> Cadastrar aluno</button>
+		</p>
 </div>
+      
+	</form>
+    <hr> 
+  </body>
+</html>
 
 </body>
 </html>

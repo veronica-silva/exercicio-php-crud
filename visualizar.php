@@ -14,12 +14,10 @@ $listaDeAlunos = lerAlunos($conexao);
 </head>
 <body>
 <div class="container">
-    <h1>Lista de alunos</h1>
+    <h1 class="text-center mt-4">Lista de alunos</h1>
     <hr>
-    <p><a href="inserir.php" class="btn btn-success"><i class="bi bi-plus-lg"></i> Inserir novo aluno</a></p>
     <div class="table-responsive container center shadow mt-1 mb-2">
     <table class="table table-hover">
-        <caption>Lista de Alunos</caption>
         <thead> 
                 <th scope="col">id</th>
                 <th scope="col">Nome</th>
@@ -54,7 +52,10 @@ para exibir a relação de alunos existentes no banco de dados.
 
 Obs.: não se esqueça de criar também os links dinâmicos para
 as páginas de atualização e exclusão. -->
-    <p><a href="index.php" class="btn btn-secondary"><i class="bi bi-arrow-left"></i> Voltar ao início</a></p>
+        <div class="row mt-4">
+        <p class="col text-center"><a href="index.php" class="btn btn-secondary btn-lg"><i class="bi bi-arrow-left"></i> Voltar ao início</a></p>
+    <p class="col text-center"><a href="inserir.php" class="btn btn-success btn-lg"><i class="bi bi-plus-lg"></i> Inserir novo aluno</a></p>
+        </div>
 </div>
 <script src="script.js"></script>
 </body>
