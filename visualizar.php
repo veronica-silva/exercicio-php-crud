@@ -1,5 +1,5 @@
 <?php
-require_once "../exercicio-php-crud/src/funcoes.php";
+require_once "src/funcoes.php";
 $listaDeAlunos = lerAlunos($conexao);
 ?>
 <!DOCTYPE html>
@@ -9,8 +9,8 @@ $listaDeAlunos = lerAlunos($conexao);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lista de alunos - Exercício CRUD com PHP e MySQL</title>
 <link href="css/style.css" rel="stylesheet">
-<link rel="stylesheet" href="../exercicio-php-crud/bootstrap/css/bootstrap.css">
-<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.dataTables.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 </head>
 <body>
@@ -18,7 +18,7 @@ $listaDeAlunos = lerAlunos($conexao);
     <h1 class="text-center mt-4">Lista de alunos</h1>
     <hr>
     <div class="table-responsive container center shadow mt-1 mb-2">
-    <table class="table table-hover" id="the-table">
+    <table class="table table-hover display" id="the-table">
         <thead> 
                 <th scope="col">id</th>
                 <th scope="col">Nome</th>
@@ -58,7 +58,12 @@ as páginas de atualização e exclusão. -->
     <p class="col text-center"><a href="inserir.php" class="btn btn-success btn-lg"><i class="bi bi-plus-lg"></i> Inserir novo aluno</a></p>
         </div>
 </div>
-<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
 <script src="script.js"></script>
+
 </body>
 </html>
