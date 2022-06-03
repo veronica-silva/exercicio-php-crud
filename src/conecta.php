@@ -1,9 +1,9 @@
 <?php
 /*Script de conehão ao servidor banco de dados */
 $servidor = "localhost";
-$usuario = "id19029958_veroot";
-$senha = "MuitoCurta@12345";
-$banco = "id19029958_crud_escola_veronica";
+$usuario = "root";
+$senha = "";
+$banco = "crud_escola_veronica";
 
 try{
 //Criando a conexão com o MySQL (API/ Driver de conexão)

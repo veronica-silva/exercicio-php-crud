@@ -29,3 +29,7 @@ function verSituacao(result){
      }
      return situacaoResultado;
 }
+
+$(document).ready( function () {
+    $('#the-table').DataTable();
+} );
